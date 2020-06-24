@@ -58,19 +58,12 @@ component.visualization.prototype.decorate = function (parent) {
  *
  * @param {HTMLElement} parent
  */
-function displayDetails(drug) {
-  var clicked = drug.target.outerHTML;
-  details = `<p>Hey!</p>`;
-  console.log(clicked);
-  // clicked.insertAdjacentHTML('afterend', details);
-}
 component.visualization.prototype.decorate_data = function (parent) {
   var nameList = [];
   var countList = [];
   this.data.forEach(drug => {
     var name = '';
     var count = 0;
-
 
     // set selected default
     name = drug['term'];
@@ -83,7 +76,7 @@ component.visualization.prototype.decorate_data = function (parent) {
   var i = 0;
   html = `
     <!-- GRAPH -->
-  <h3>Frequency of the phrase "ice cream" in food recalls grouped by recalling company</h2>
+    <h3>Frequency of the phrase "ice cream" in food recalls grouped by recalling company</h2>
     <canvas id="myChart" width="400" height="400"></canvas>
     `
   parent.insertAdjacentHTML('beforeend', html);
@@ -95,8 +88,8 @@ component.visualization.prototype.decorate_data = function (parent) {
     // Combine random numbers
     let hsl = `hsl(${h}, ${s}%, ${l}%)`;
     colors.push(hsl);
-  });
-  console.log(colors);
+  })
+//   Chart Details
   var ctx = document.getElementById('myChart').getContext('2d');
   var myChart = new Chart(ctx, {
     type: 'horizontalBar',
